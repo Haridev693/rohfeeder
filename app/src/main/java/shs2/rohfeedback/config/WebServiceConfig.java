@@ -18,6 +18,7 @@ public class WebServiceConfig {
     public static final String SHOWCART = "showcart";
     public static final String BOOKING = "addHistory";
     public static final String CDETAILS = "custDetails";
+    public static final String RATING = "rating";
 
     public static String Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
 //    public static String Serverbackendlink= "http://192.168.0.105/restohelper";
@@ -66,5 +67,9 @@ public class WebServiceConfig {
     public static String putURLCustomerDetails(Context context)
     {
         return Serverbackendlink+API_LINK_APP+CDETAILS;
+    }
+    public static String putURLRating(Context context)
+    {
+        return Serverbackendlink+API_LINK_APP+RATING;
     }
 }

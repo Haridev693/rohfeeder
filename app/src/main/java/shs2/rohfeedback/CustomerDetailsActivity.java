@@ -1,6 +1,8 @@
 package shs2.rohfeedback;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +26,7 @@ import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import shs2.rohfeedback.activity.RatingActivity;
 import shs2.rohfeedback.json.util.ParserUtility;
 import shs2.rohfeedback.modelmanager.ErrorNetworkHandler;
 import shs2.rohfeedback.modelmanager.ModelManager;
@@ -57,7 +60,6 @@ private SimpleDateFormat simpleDateFormat;
 
 private CustomerDetails custDetails;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,7 +79,6 @@ private CustomerDetails custDetails;
 
     @Override
     public void onClick(View view) {
-
         switch(view.getId())
         {
             case R.id.btnnext: {
@@ -95,8 +96,13 @@ private CustomerDetails custDetails;
                            ArrayList<Query> queries =  ParserUtility.parseCustdetails(object.toString());
                            Bundle b = new Bundle();
                            b.putString("queries",queries.toString());
+                            Log.w("QueriesList",queries.toString());
+                           Intent intent  =new Intent(CustomerDetailsActivity.this, RatingActivity.class);
+                           startActivity(intent);
+                           finish();
+
 //                            GlobalVariable.details
-                           Toast.makeText(CustomerDetailsActivity.this, "Connected Now"+ GlobalVariable.details, Toast.LENGTH_SHORT).show();
+//                           /*Toast.makeText(CustomerDetailsActivity.this, "Connected Now"+ GlobalVariable.details, Toast.LENGTH_SHORT).show();*/
                         }
                     });
                 }
@@ -118,6 +124,10 @@ private CustomerDetails custDetails;
         String sphone = custPhone.getText().toString();
         String semail = custEmail.getText().toString();
         String sdob = edtdob.getText().toString();
+        Log.w("DOB",sdob);
+        Log.w("DOB",sname);
+        Log.w("DOB",semail);
+        Log.w("DOB",sphone);
 
         Boolean valid = true;
 //        if(sphone.length()>0) {

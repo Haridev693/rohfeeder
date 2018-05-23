@@ -215,8 +215,28 @@ public class ModelManager {
 
             }
         });
+    }
 
+    public static void putRatings(Context context,String json,String suggestion,String custId,boolean isShowDialog,final ModelManagerListener listener)
+    {
+        Map<String,String> params =  ParameterFactory.createRatingDetails(context,json,suggestion,custId);
+        new HttpGet(context, WebServiceConfig.putURLRating(context), params, isShowDialog,new HttpListener() {
+            @Override
+            public void onHttpRespones(Object respones) {
+                if(respones !=null){
+                    listener.onSuccess(respones.toString());
+                }else
+                {
+                    listener.onError(null);
+                }
 
+            }
+        }, new HttpError() {
+            @Override
+            public void onHttpError(VolleyError volleyError) {
+
+            }
+        });
     }
 
 

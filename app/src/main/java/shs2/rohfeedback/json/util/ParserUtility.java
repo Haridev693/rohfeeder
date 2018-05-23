@@ -237,6 +237,7 @@ public final class ParserUtility {
         try {
             JSONObject object = new JSONObject(json);
             int jshop = object.getInt("customerid");
+            Log.w("CustomerID",""+jshop);
 //            String details = object.getString("details");
 
 //            jshop
@@ -252,12 +253,16 @@ public final class ParserUtility {
 
             JSONObject item;
             JSONArray items = object.getJSONArray(KEY_DATA);
+            Log.w("CustomArraySize",items.length()+"");
             for (int i = 0; i < items.length(); i++) {
                 item = items.getJSONObject(i);
                 questinfo = new Query();
                 questinfo.setId(item.getInt("Id"));
                 questinfo.setQuestion(item.getString("Question"));
-//                userInfo.setUserPassword(item.getString("passOperator"));
+                GlobalVariable.questionId.add(item.getInt("Id"));
+                GlobalVariable.questionName.add(item.getString("Question"));
+//
+//          userInfo.setUserPassword(item.getString("passOperator"));
                 arr.add(questinfo);
             }
 

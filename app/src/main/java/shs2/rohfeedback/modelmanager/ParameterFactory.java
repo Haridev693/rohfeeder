@@ -53,4 +53,13 @@ public final class ParameterFactory {
 //		parameters.put("cartId", CARTID);
 		return parameters;
 	}
+	public static Map<String,String> createRatingDetails(Context context,String json,String suggestion,String custId)
+	{
+		Map<String, String> parameters = new HashMap<>();
+		parameters.put("json",json);
+		parameters.put("suggestion",suggestion);
+		parameters.put("custId",custId);
+
+		return parameters;
+	}
 }
