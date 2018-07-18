@@ -20,7 +20,6 @@ import shs2.rohfeedback.BaseActivity;
 import shs2.rohfeedback.CustomerDetailsActivity;
 import shs2.rohfeedback.R;
 import shs2.rohfeedback.config.GlobalValue;
-import shs2.rohfeedback.config.WebServiceConfig;
 import shs2.rohfeedback.database.DatabaseUtility;
 import shs2.rohfeedback.json.util.ParserUtility;
 import shs2.rohfeedback.modelmanager.ErrorNetworkHandler;
@@ -75,14 +74,14 @@ import shs2.rohfeedback.widget.picker.view.SimpleDialogPicker;
         {
 
         }
-        else {
-            WebServiceConfig.Serverbackendlink = session2.getSetting().ServerIP;
-        }
-
-        if(WebServiceConfig.Serverbackendlink.equals(""))
-        {
-            WebServiceConfig.Serverbackendlink = context.getString(R.string.server_backend_link);
-        }
+//        else {
+//            WebServiceConfig.Serverbackendlink = session2.getSetting().ServerIP;
+//        }
+//
+//        if(WebServiceConfig.Serverbackendlink.equals(""))
+//        {
+//            WebServiceConfig.Serverbackendlink = context.getString(R.string.server_backend_link);
+//        }
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);

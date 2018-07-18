@@ -20,7 +20,12 @@ public class WebServiceConfig {
     public static final String CDETAILS = "custDetails";
     public static final String RATING = "rating";
 
-    public static String Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
+
+    public static String OriginalLink= "";
+
+    public static String OrigIP = "https://www.restohelper.com/";
+    public static String Serverbackendlink= OrigIP + OriginalLink;
+//    public static String Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
 //    public static String Serverbackendlink= "http://192.168.0.105/restohelper";
 
 

@@ -37,6 +37,8 @@ public class sessionmanager {
     // Sharedpref file name
     private static final String PREF_NAME = "swachm";
 
+    public static final String DemoMode = "DemoMode";
+
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
 
@@ -139,7 +141,20 @@ public class sessionmanager {
 //        editor.putString(IPAddress,s.IPADDRESS);
         editor.putString(ServerIP,s.ServerIP);
 
-        WebServiceConfig.Serverbackendlink = ServerIP;
+        editor.putBoolean(DemoMode,s.DemoMode);
+
+//        if(s.ServerIP)
+        WebServiceConfig.Serverbackendlink = WebServiceConfig.OrigIP + s.ServerIP;
+//        WebServiceConfig.Serverbackendlink = WebServiceConfig.Serverbackendlink+"/"+ s.ServerIP;
+//        WebServiceConfig.Serverbackendlink = ServerIP;
+
+        if(s.DemoMode)
+        {
+            WebServiceConfig.Serverbackendlink= "http://shs2apicalls.pe.hu/backend";
+//            WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
+        }
+
+//        WebServiceConfig.Serverbackendlink = ServerIP;
 //        editor.putString(ShopName,s.ShopName);
 //        editor.putString(AddressLine1,s.AddressLine1);
 //        editor.putString(AddressLine2,s.AddressLine2);
@@ -172,6 +187,17 @@ public class sessionmanager {
 //        s.AddressLine1 = pref.getString(AddressLine1,"");
 //        s.AddressLine2 = pref.getString(AddressLine2,"");
 //        s.ShopName = pref.getString(ShopName,"");
+
+        s.DemoMode = pref.getBoolean(DemoMode,false);
+
+        WebServiceConfig.Serverbackendlink = WebServiceConfig.OrigIP + s.ServerIP;
+
+        if(s.DemoMode)
+        {
+            WebServiceConfig.Serverbackendlink="http://shs2apicalls.pe.hu/backend";
+//                        WebServiceConfig.Serverbackendlink = "http://192.168.1.101/rohadmin2_79";
+        }
+
 
         return s;
     }

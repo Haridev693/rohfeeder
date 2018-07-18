@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:textSize="30sp"
-            android:text="Server Settings"
+            android:text="General Settings"
             android:gravity="center"
             android:background="#eeefa7"
             android:textColor="#000"
@@ -33,6 +33,14 @@
             <!--android:textSize="20sp"-->
 
             <!--/>-->
+
+        <CheckBox
+            android:id="@+id/CheckEnableDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enable Demo"
+            android:textSize="20sp"
+            />
 
 
 

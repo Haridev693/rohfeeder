@@ -59,6 +59,7 @@ public class Printersetting extends BaseActivity implements View.OnClickListener
     private Resources res;
     private EditText ServerIP;
     private TextInputLayout printerLayout;
+    private CheckBox DemoMode;
 
 
     @Override
@@ -81,6 +82,7 @@ public class Printersetting extends BaseActivity implements View.OnClickListener
 //        txtview = (EditText) findViewById(R.id.PrinterIP);
         ServerIP = (EditText) findViewById(R.id.ServerIP);
 //        printerLayout = (TextInputLayout) findViewById(R.id.printerLayout);
+        DemoMode = (CheckBox)findViewById(R.id.CheckEnableDemo);
 
 //        bluetoothScan = (Button) findViewById(R.id.btnBluetoothscan);
         btnCancel = (Button) findViewById(R.id.btnCancel);
@@ -97,6 +99,7 @@ public class Printersetting extends BaseActivity implements View.OnClickListener
 //            check.setChecked(setter.EnablePrinter);
 //            txtview.setText(setter.IPADDRESS);
             ServerIP.setText(setter.ServerIP);
+            DemoMode.setChecked(setter.DemoMode);
 
 //            txtview.setText(setter.BluetoothAddress);
 //            Shopname.setText(setter.ShopName);
@@ -148,6 +151,7 @@ public class Printersetting extends BaseActivity implements View.OnClickListener
 //                s.EnablePrinter = check.isChecked();
 //                s.IPADDRESS = txtview.getText().toString();
                 s.ServerIP = ServerIP.getText().toString();
+                s.DemoMode = DemoMode.isChecked();
 
 
 //                if(setter==null){

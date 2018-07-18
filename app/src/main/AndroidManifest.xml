@@ -11,9 +11,9 @@
     <application
         android:name=".volleynetwork.ControllerRequest"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/feedbackicon_round"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/feedbackicon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -32,9 +32,9 @@
         <activity
             android:name=".activity.Printersetting"
             android:launchMode="singleTop" />
-        <activity android:name=".customerdetails" />
+        <!--<activity android:name=".customerdetails" />-->
         <activity android:name=".CustomerDetailsActivity" />
-        <activity android:name=".activity.RatingActivity"></activity>
+        <activity android:name=".activity.RatingActivity"/>
     </application>
 
 </manifest>
